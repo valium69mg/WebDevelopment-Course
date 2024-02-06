@@ -1,0 +1,35 @@
+div{
+    width: 400px;
+    height: 500px;
+    background-color: black;
+    padding-top: 20px;
+    padding-left: 20px ;
+    padding-bottom: 20px ;
+    padding-right: 20px ;
+    margin-left: 675px;
+    
+}
+
+
+h1{
+    
+    font-family: 'Libre Baskerville', serif;
+    color: aliceblue;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+p{
+    
+    font-family: 'Libre Baskerville', serif;
+    color: aliceblue;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+}
+
+.outer-box{
+    background-color: purple;
+}

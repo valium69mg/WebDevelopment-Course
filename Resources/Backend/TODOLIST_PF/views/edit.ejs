@@ -1,0 +1,6 @@
+<%- include('partials/header') %>
+<form action="/edit/?id=<%= locals.edit_id %>" method="POST" autocomplete="off">
+    <input type="text" name="taskEdited" placeholder="type edited task">
+    <input class="btn btn-outline-dark" type="submit" value="edit">
+</form>  
+<%- include('partials/footer') %>

@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+  <h1> MY TASKS </h1>
+  <div class="formOfTask">
+  <form action="/submit" method="POST" autocomplete="off">
+        <input type="text" name="task" placeholder="type task">
+        <input class="btn btn-outline-dark" type="submit" value="add">
+  </form>
+  </div>
+  <div class="listOfTasks">
+    <ul class="list-group">
+      <% for (let i = 0; i < locals.list_length; i++) { %>
+             
+            <ul name="post" class="list-group-item"> <%= list[i]["post"] %> </ul>
+            <ul id="date" > <%= list[i]["ts"] %></ul>
+            <div class="buttons">
+              <form action="/delete/?post=<%= list[i]["post"] %>" method="POST">
+                <button name="removeBtn" type="submit" value="<%= list[i]["post"] %>"> remove </button>
+              </form>
+              <a class="btn btn-dark btn-lg" href="/edit/?id=<%= list[i]["id"]%>" role="button">edit</a>
+              
+            </div>
+          
+      <% } %>
+  </ul>
+  </div>
+  <%- include('partials/footer') %>

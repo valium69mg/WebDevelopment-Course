@@ -1,0 +1,237 @@
+body{
+            
+    background-color: #171717;
+    
+}
+
+.index {
+    text-decoration: none;
+}
+
+
+@media (min-width: 1600px){
+    .navbar{
+        display: grid;
+        padding: 1rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .index{
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+    }
+
+    .index > a {
+        font-size: 2rem;
+    }
+
+    .grid-container{
+        display: grid;
+        padding: 1rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        place-items:  center;
+        align-items: flex-start;
+    }
+
+    img{
+        width: 720px;
+        height: 720px;
+        border-radius: 5rem;
+    }
+    
+    .foto-carlos{
+        display: flex;
+        flex-direction: column;
+        padding-top: 5rem;
+        
+    
+    }
+    .flex-container{
+        display: flex;
+        flex-direction: column;
+        width: 80vh;
+        gap: 1rem;
+        padding-top: 5rem;
+
+    }
+
+
+    .flex-container > p{
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .flex-container > h1{
+        font-size: 4rem;
+        margin: 0;
+    }
+
+    
+}
+
+@media (min-width: 830px) and (max-width: 1599px){
+
+    .navbar{
+        display: grid;
+        padding: 1rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .index{
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+    }
+
+    .index > a {
+        font-size: 2rem;
+    }
+
+    .grid-container{
+        display: grid;
+        padding: 1rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        place-items:  center;
+    }
+
+    img{
+        width: 480px;
+        height: 480px;
+        border-radius: 1rem;
+    }
+    
+
+    .flex-container{
+        display: flex;
+        flex-direction: column; 
+        width: 80vh;
+        gap: 1rem;
+
+    }
+
+
+    .flex-container > p{
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .flex-container > h1{
+        font-size: 4rem;
+        margin: 0;
+    }
+}
+
+
+@media (min-width: 580px) and (max-width: 855px){
+
+    .navbar{
+        display: grid;
+        padding: 1rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .index{
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+    }
+
+    .index > a {
+        font-size: 1.5rem;
+    }
+
+    .grid-container{
+        display: grid;
+        padding: 0.5rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        place-items:  center;
+    }
+
+    img{
+        width: 360px;
+        height: 360px;
+        border-radius: 1rem;
+    }
+
+
+    .flex-container{
+        display: flex;
+        flex-direction: column; 
+        width: 50vh;
+        gap: 0.5rem;
+
+    }
+
+
+    .flex-container > p{
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .flex-container > h1{
+        font-size: 4rem;
+        margin: 0;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 579px){
+
+    .navbar{
+        display: grid;
+        padding: 1rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        justify-items: center;
+    }
+
+    .index{
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+    }
+
+    .index > a {
+        font-size: 1rem;
+    }
+
+    .grid-container{
+        display: grid;
+        padding: 0.5rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        place-items:  center;
+    }
+
+    img{
+        width: 144px;
+        height: 144px;
+        border-radius: 1rem;
+    }
+
+
+    .flex-container{
+        display: flex;
+        flex-direction: column; 
+        width: 20vh;
+        gap: 0.5rem;
+
+    }
+
+
+    .flex-container > p{
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .flex-container > h1{
+        font-size: 2rem;
+        margin: 0;
+    }
+}           

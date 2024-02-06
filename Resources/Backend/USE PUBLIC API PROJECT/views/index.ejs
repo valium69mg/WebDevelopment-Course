@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Part Joke web site</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body>
+    <h1> INPUT YOUR NAME AND GET A RANDOM JOKE!</h1>
+    
+    <form class="inputname" action="/submit" method="POST">
+        <label> Name: </label>
+        <input id="name" type="text" name="name" />
+        <input type="submit" value="Submit" />
+        <P id="yourjoke"> Your joke: </P>
+      </form>
+    <div class="joke">
+      <% if (locals.part1){ %>
+        <p> Setup: <%=  part1 %> </p>
+        
+      <% } %>
+      <% if (locals.part2){ %>
+        <p> Delivery: <%=  part2 %> </p>
+        
+      <% } %>
+    </div>
+</body>
+</html>

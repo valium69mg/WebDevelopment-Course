@@ -1,0 +1,18 @@
+<%- include("partials/header") %>
+    <h1 class="display-4">  Today Tasks. </h1>
+    
+    <ul class="list-group">
+        <% for (let i = 0; i < locals.list_length; i++) { %>
+            <div class="task">
+                <input class="form-check-input" type="checkbox" id="cbox1" value="first_checkbox" >
+                <li class="list-group-item"> <%= tasks[i] %></li>
+            </div>
+        <% } %>
+    </ul>
+    
+    <form action="/submit" method="POST">
+        <input type="text" name="task" placeholder="type task">
+        <input class="btn btn-outline-dark" type="submit" value="add">
+  </form>
+  
+<%- include("partials/footer") %>
