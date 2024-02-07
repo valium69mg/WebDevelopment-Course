@@ -16,6 +16,7 @@ h1 {
   width: fit-content;
   row-gap: 10px;
   background-color: beige;
+  padding: 20px;
 }
 
 .App {
