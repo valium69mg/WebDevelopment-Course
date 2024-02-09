@@ -1,8 +1,11 @@
 import React from 'react';
 import Input from './Input';
 
-function Login() {
-    return <div className='form'>
+
+
+function Login(props) {
+    
+        return (<div className='form'>
         <form className="formContainer"> </form>
             <Input
                 type="text"
@@ -12,9 +15,16 @@ function Login() {
                 type="text"
                 placeholder="Password"
             />
-            <button type="submit"> Login </button>
-  </div>
+            {props.isRegistered === false && (
+                <Input
+                type="text"
+                placeholder="Confirmed Password"
+            />)}
     
+            
+            <button type="submit"> {props.isRegistered ? "Login" : "Register"} </button>
+        </div>)
+      
 }
 
 export default Login;
