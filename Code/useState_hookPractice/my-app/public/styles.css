@@ -1,0 +1,32 @@
+body {
+    background-color: #2b1e15;
+    font: normal 20px "Andale Mono", AndaleMono, monospace;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%; right: 50%;
+    transform: translate(50%,-50%);
+    width: 200px;
+    height: fit-content;
+    padding: 2rem;
+    background-color: #e2d1c5;
+    box-shadow: 12px 12px 2px 1px #100b08;
+}
+
+button {
+    box-shadow: 0 8px 8px 0px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: whitesmoke;
+    border-color: black;
+    height: 2rem;
+    border: 1px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #2b1e15; /* Green */
+    color: whitesmoke;
+}
