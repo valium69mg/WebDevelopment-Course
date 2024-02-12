@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import App from './App.jsx';
 
+
+/*
+Render our app in the DOM 
+*/
 ReactDOM.render(
   <div className="container">
-    <h1>0</h1>
-    <button>+</button>
+    <App/>
   </div>,
-  document.getElementById("root")
-);
+  document.getElementById("root"));
