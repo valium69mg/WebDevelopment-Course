@@ -5,12 +5,14 @@ function App() {
   const [name,setName] = useState("")
   const [headingText,setHeading] = useState("")
    
-  function handleClick(){
+  function handleClick(event){
     setHeading(name)
+    event.preventDefault(); // PREVENTS THE DEFAULT BEHAIVIOUR OF THE FORM THAT REFRESHES THE PAGE
   }
   
   function handleChange(event) {
     setName(event.target.value)
+
   }
   
   return (
