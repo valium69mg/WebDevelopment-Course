@@ -4,6 +4,9 @@
     width: 100%;   
 }
 
+h1 {
+    font-weight: 400;
+}
 
 .roboto-thin {
     font-family: "Roboto", sans-serif;
@@ -14,34 +17,32 @@
 
 .navibar {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: flex-start;
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
-    padding: 1vh;
     width: 100%; /* Full width */
+    margin-top: 1vh;
     gap: 20px;
     box-shadow: 5px 5px 5px #E5E0FF;
+    
 }
 
 .navibar h1 {
     color: #7286D3;
-    font-weight: 400;
+    padding: 1vh;
 }
 
 .watermark {
-    top: 0;
-    left: 0%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 1vh;
-    column-gap: 5px;
+    flex-grow: 1;
+    
 }
 
 .watermark h1 {
-    color: #7286D3; 
-    font-weight: 400;
-    
+    color: #7286D3;  
 }
 
 .presentationCard {
@@ -50,33 +51,46 @@
     /* JUSTIFY CONTENT IS FOR PLACING THE PRESENTATION CARD IN THE MIDDLE*/
     justify-content: center;
     align-items: center;
-    padding-top: 5vh;
     column-gap: 2vh;
+    box-shadow: 0px 10px 5px #E5E0FF;
+    padding-top: 15vh;
+    padding-bottom: 5vh;
+    
 }
 
 .presentationCard-paragraph{
     max-width: 25%;
     text-align: justify;
     margin: 5px;
-    box-shadow: 5px 10px 5px #E5E0FF;
+    
     
     
 }
 
 .presentationCard-paragraph h1{
     color: #7286D3;
+    transition: 0.5s ease;
     
+}
+
+.presentationCard-paragraph h1:hover{
+    transform: scale(1.1);
 }
 
 .presentationCard-paragraph p{
     color: black;
     margin: 5px;
+    transition: 0.5s ease;
     
 }
 
+.presentationCard-paragraph p:hover{
+    transform: scale(1.1);
+}
+
 .wrapper {
-    height: 360px;
-    width: 360px;
+    height: 280px;
+    width: 280px;
     border-radius: 50%;
     overflow: hidden;
     border: 6px solid #E5E0FF;
