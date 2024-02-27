@@ -3,7 +3,7 @@ import Navibar from "./navbar";
 
 function Contact(){
     return (
-        <div className="contactContainer">
+        <div className="contactContainer App">
             <Navibar/>
             <h1> Contact Page</h1>
         </div>

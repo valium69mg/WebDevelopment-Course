@@ -3,7 +3,7 @@ import Navibar from "./navbar";
 
 function Projects() {
     return (
-        <div className="projectsContainer">
+        <div className="projectsContainer App">
             <Navibar/>
             <h1> Projects page </h1>
         </div>
