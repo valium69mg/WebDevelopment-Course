@@ -1,15 +1,23 @@
 import React from "react";
-import Navibar from "./navbar";
+import {BrowserRouter as Router,Route,Routes} from "react-router-dom";
 
-import PresentationCard from "./presentation_card";
-import Logos from "./logos";
+import Home from "./home";
+import Contact from "./contact";
+import Projects from "./projects";
+import Resume from "./resume";
+
 
 function App() {
   return (
-    <div className="App">  
-      <Navibar/>
-      <PresentationCard/>
-      <Logos/>
+    <div className="AppRouter">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/contact" element={<Contact/>}/>
+          <Route path="/projects" element={<Projects/>}/>
+          <Route path="/resume" element={<Resume/>}/>
+        </Routes>
+      </Router>
     </div>
   );
 }

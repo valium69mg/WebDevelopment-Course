@@ -4,9 +4,6 @@
     width: 100%;   
 }
 
-h1 {
-    font-weight: 400;
-}
 
 .roboto-thin {
     font-family: "Roboto", sans-serif;
@@ -22,22 +19,24 @@ h1 {
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
-    margin-top: 1vh;
+    margin-top: 2vh;
     gap: 20px;
     box-shadow: 5px 5px 5px #E5E0FF;
     
 }
 
-.navibar h1 {
+.navibar a {
     color: #7286D3;
-    padding: 1vh;
+    /* links */
+    text-decoration: none;
+    padding-right: 2vh;
 }
 
 .watermark {
     display: flex;
     flex-direction: row;
-    align-items: center;
     flex-grow: 1;
+    align-items: center;
     
 }
 
