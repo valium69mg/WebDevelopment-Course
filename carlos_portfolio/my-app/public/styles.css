@@ -1,0 +1,127 @@
+.App {
+    background-color:#fff;
+    height: 100vh;
+    width: 100%;   
+}
+
+
+.roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3vh;
+  }
+
+.navibar {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    padding: 1vh;
+    width: 100%; /* Full width */
+    gap: 20px;
+    box-shadow: 5px 5px 5px #E5E0FF;
+}
+
+.navibar h1 {
+    color: #7286D3;
+    font-weight: 400;
+}
+
+.watermark {
+    top: 0;
+    left: 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1vh;
+    column-gap: 5px;
+}
+
+.watermark h1 {
+    color: #7286D3; 
+    font-weight: 400;
+    
+}
+
+.presentationCard {
+    display: flex;
+    flex-direction: row;
+    /* JUSTIFY CONTENT IS FOR PLACING THE PRESENTATION CARD IN THE MIDDLE*/
+    justify-content: center;
+    align-items: center;
+    padding-top: 5vh;
+    column-gap: 2vh;
+}
+
+.presentationCard-paragraph{
+    max-width: 25%;
+    text-align: justify;
+    margin: 5px;
+    box-shadow: 5px 10px 5px #E5E0FF;
+    
+    
+}
+
+.presentationCard-paragraph h1{
+    color: #7286D3;
+    
+}
+
+.presentationCard-paragraph p{
+    color: black;
+    margin: 5px;
+    
+}
+
+.wrapper {
+    height: 360px;
+    width: 360px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid #E5E0FF;
+    
+}
+
+.wrapper img {
+    height: 100%;
+    width: auto;
+    border-radius: 50%;
+    filter: grayscale(100%);
+    transition: 0.5s ease;
+    cursor:pointer;
+}
+
+.wrapper img:hover{
+    transform: scale(1.3);
+    filter: grayscale(0%);
+}
+
+.logos {
+    display: flex;
+    flex-direction: row;
+    padding: 3vh;
+    margin: 5vh;
+    justify-content: center;
+    column-gap: 15vh;
+    box-shadow: 0px 10px 5px #E5E0FF;
+    
+
+}
+
+.logos img {
+    width: 12vh;
+    height: 12vh;
+    background-color: #fff;
+    transition: 0.5s ease;
+}
+
+.logos h1 {
+    color: #7286D3;
+    font-size: 5vh;
+}
+
+.logos img:hover{
+    transform: scale(1.3);
+
+}
