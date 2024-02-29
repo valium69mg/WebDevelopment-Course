@@ -1,3 +1,8 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+
 .App {
     background-color:#fff;
     height: 100vh;
@@ -16,17 +21,15 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    position: fixed; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */
-    margin-top: 2vh;
     gap: 20px;
     box-shadow: 5px 5px 5px #E5E0FF;
-    
+    background-color: #7286D3;
+    padding: 2vh;
+    margin-bottom: 1vh;
 }
 
 .navibar a {
-    color: #7286D3;
+    color: #E5E0FF;
     /* links */
     text-decoration: none;
     padding-right: 2vh;
@@ -35,8 +38,9 @@
 
 .navibar a:hover {
     transform: scale(1.2);
-    text-shadow: 4px 4px 8px #7286D3;
 }
+
+/* WATERMARK CSS */
 
 .watermark {
     display: flex;
@@ -47,8 +51,11 @@
 }
 
 .watermark h1 {
-    color: #7286D3;  
+    color: #E5E0FF;  
+    font-weight: 800;
 }
+
+/* PRESENTATION CARD CSS */
 
 .presentationCard {
     display: flex;
@@ -58,7 +65,7 @@
     align-items: center;
     column-gap: 2vh;
     box-shadow: 0px 10px 5px #E5E0FF;
-    padding-top: 15vh;
+    padding-top: 5vh;
     padding-bottom: 5vh;
     
 }
@@ -67,14 +74,12 @@
     max-width: 25%;
     text-align: justify;
     margin: 5px;
-    
-    
-    
 }
 
 .presentationCard-paragraph h1{
     color: #7286D3;
     transition: 0.5s ease;
+    font-style: italic;
     
 }
 
@@ -85,6 +90,7 @@
 .presentationCard-paragraph p{
     color: black;
     margin: 5px;
+    font-style: italic;
     transition: 0.5s ease;
     
 }
@@ -115,6 +121,8 @@
     transform: scale(1.3);
     filter: grayscale(0%);
 }
+
+/* LOGOS SKILLS CSS */
 
 .logos {
     display: flex;
@@ -148,26 +156,32 @@
 /* RESUME */
 
 .resume {
-    position: absolute;
-    left: 45%;
-    padding-top: 20vh;
-    width: fit-content;
-    transform: translate(-50%, -50%);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 5vh;
 }
 
     
 .resume h1 {
     font-size: 5vh;
     color: #7286D3;
-}
-
-.resume button{
-    color: #7286D3;
-    border: 2px solid #7286D3;
     transition: ease 0.5s;
 }
 
-.resume button:hover {
+.resume h1:hover {
+    transform: scale(1.2);
+}
+
+.resume a{
+    color: #7286D3;
+    border: 2px solid #7286D3;
+    transition: ease 0.5s;
+    text-decoration: none;
+    padding: 1vh;
+}
+
+.resume a:hover {
     transform: scale(1.2);
 }
 .resumeCard {
@@ -188,7 +202,7 @@
 
 .wrapperResume img {
     height: 100%;
-    width: auto;
+    width: 100%;
     border-radius: 50%;
     filter: grayscale(100%);
     transition: 0.5s ease;
@@ -199,4 +213,80 @@
 .wrapperResume img:hover{
     transform: scale(1.3);
     filter: grayscale(0%);
+}
+
+/* PROJECTS */
+
+.projectsContainer > h1 {
+    color: #7286D3;
+    padding-left: 10vh;
+}
+
+.cardsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vh;
+    padding-left: 10vh;
+    padding-right: 10vh;
+    
+}
+
+.card {
+    padding: 5vh;
+    
+}
+
+.card p {
+    text-align: justify;
+}
+
+.card img {
+    width: 240px;
+    height: 180px;
+    /* ALIGN SELF TO ALIGN THE IMG AT THE CENTER*/
+    align-self: center;
+    transition: ease 0.5s;
+}
+
+.card img:hover {
+    transform: scale(1.1);
+}
+
+
+
+.cardImg {
+    width: 30vh;
+    height: auto;
+    
+}
+
+
+
+.language {
+    color: #7286D3
+}
+
+.projecttitlecard {
+    color: #7286D3;
+}
+
+/* CONTACT CARDS */
+
+.contactCards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contactCards {
+    flex: 1;
+}
+
+.contactCards h1 {
+    color: #7286D3;
+    text-align: center;
+}
+
+.contactCards p {
+    text-align: center;
 }
