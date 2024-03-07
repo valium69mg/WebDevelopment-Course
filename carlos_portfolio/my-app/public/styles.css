@@ -1,14 +1,15 @@
 body {
     font-family: "Roboto", sans-serif;
+    background-image: url("./background_img/gradient.png");
+    background-size:cover;
+    background-repeat: repeat-y;
+    height: 100vh;
+    width: 100%;   
 }
 
 
 .App {
-    background-image: url("./background_img/background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100%;   
+    
     
 }
 
@@ -65,9 +66,8 @@ body {
     display: flex;
     flex-direction: column;
     row-gap: 15vh;
-    margin-top: 5vh;
+    margin-top: 7vh;
     align-items: center;
-    
     
 }
 
@@ -76,7 +76,7 @@ body {
 .presentationCard {
     display: flex;
     flex-direction: row;
-    column-gap: 18px;
+    column-gap: 16px;
     /* JUSTIFY CONTENT IS FOR PLACING THE PRESENTATION CARD IN THE MIDDLE*/
     justify-content: center; /* COLUMN ALIGNMENT*/
     align-items: center; /* ROW ALIGNMENT*/
@@ -85,7 +85,13 @@ body {
     width: 60%;
     border-radius: 12px;
     padding: 18px;
-    
+
+    /*TRANSITION*/
+    transition: ease 0.5s;
+}
+
+.presentationCard:hover {
+    transform: scale(1.1);
 }
 
 .presentationCard-paragraph{
@@ -97,6 +103,7 @@ body {
 
 .presentationCard-paragraph h1{
     color: black;
+    text-align: justify;
     font-size: 48px;
     letter-spacing: -0.05em;
     line-height: 1.3em; /* FROM DESIGN TUTORIAL*/
@@ -106,7 +113,7 @@ body {
     color: black;
     text-align: justify;
     font-style: italic;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.03em;
     line-height: 1.5em;
     
 }
@@ -149,6 +156,7 @@ body {
     color: black;
     font-size: 5vh;
     font-style: italic;
+    letter-spacing: -0.05em;
 }
 
 .logos img:hover{
@@ -220,57 +228,51 @@ body {
 
 /* PROJECTS */
 
-.projectsContainer > h1 {
-    color: #7286D3;
+.projectsContainer h1 {
     padding-left: 10vh;
+    margin: 2vh;
 }
+
 
 .cardsContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 12px;
+    column-gap: 12px;
     padding-left: 10vh;
     padding-right: 10vh;
     
 }
 
-.card {
-    padding: 5vh;
-    
+.projectCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    row-gap: 6px;
+    padding: 12px;
+    backdrop-filter: blur(16px);
+    box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.25);
 }
 
-.card p {
-    text-align: justify;
+.projectCard h2 {
+    font-size: 1.5rem;
+    letter-spacing: -0.05em;
+    text-align: center;
+    color: #e45370;
+
 }
 
-.card img {
-    width: 240px;
+.projectCard p {
+    text-align: center;
+}
+
+.projectCard > img {
     height: 180px;
-    /* ALIGN SELF TO ALIGN THE IMG AT THE CENTER*/
-    align-self: center;
-    transition: ease 0.5s;
-}
-
-.card img:hover {
-    transform: scale(1.1);
 }
 
 
-
-.cardImg {
-    width: 30vh;
-    height: auto;
-    
-}
-
-
-
-.language {
-    color: #7286D3
-}
-
-.projecttitlecard {
-    color: #7286D3;
+.languageParagraph {
+    color: #e45370;
 }
 
 /* CONTACT CARDS */
@@ -284,6 +286,8 @@ body {
 .contactCards {
     flex: 1;
 }
+
+
 
 .contactCards h1 {
     color: #7286D3;

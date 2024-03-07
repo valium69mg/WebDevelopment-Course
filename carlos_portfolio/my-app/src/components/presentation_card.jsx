@@ -9,7 +9,7 @@ function PresentationCard(){
             </div> 
             <div className="presentationCard-paragraph">
                 <h1> Hi, I am Carlos.</h1>
-                <p> I'm a Mechatronics Engineer, graduated from Tec de Monterrey. I focus my work on Web and App development, using tools as Javascript, Python, Databases, RESTFUL APIs and various frameworks.  </p>
+                <p> I'm a Engineer, graduated from Tec de Monterrey. I focus my work on Web and App development, using various languages and frameworks.  </p>
             </div>
             
         </div>
