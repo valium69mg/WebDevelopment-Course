@@ -14,6 +14,7 @@ const animations = {
 const AnimatedHome = () => {
     return (
         <motion.div
+            class="homeContainer"
             variants={animations}
             initial="initial"
             animate="animate"
@@ -22,6 +23,7 @@ const AnimatedHome = () => {
         >
             <PresentationCard/>
             <Logos/>
+            
         </motion.div>
     );
 };

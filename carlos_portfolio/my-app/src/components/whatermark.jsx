@@ -1,6 +1,6 @@
 import React from "react";
 
-const logo_fill = "#E5E0FF";
+const logo_fill = "#fff";
 const viewbox = "0 0 10 25";
 
 function Watermark(){
