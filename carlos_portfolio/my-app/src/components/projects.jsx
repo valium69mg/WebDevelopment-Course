@@ -14,7 +14,7 @@ const animations = {
 const projects = [
     {
         "title":"Password Manager",
-        "body":"A password manager desktop app, where the program saves the user's passwords through AES Encryption for managing. ",
+        "body":"A password manager desktop app, where the program saves the user's passwords through AES Encryption for managing ,editing and retrieving passwords.  ",
         "img":img_passwordmanager,
         "language":"Python"
     },
@@ -68,7 +68,7 @@ const projects = [
 function ProjectCard(props) {
   return (
     <div className="projectCard">
-        <img src={props.img}></img>
+        <img src={props.img} alt={props.alt}></img>
         <h2> {props.title} </h2>
         <p> {props.body} </p>
         <p className="languageParagraph"> {props.language}</p>
@@ -82,7 +82,7 @@ function Projects() {
     return (
         <div className="projectsContainer App">
             <Navibar/>
-            <h1> Projects</h1>
+
             <motion.div 
             className="cardsContainer"
             variants={animations}
@@ -96,6 +96,7 @@ function Projects() {
                       <ProjectCard
                         id={projects.indexOf(project)}
                         img={project["img"]}
+                        alt={"img" + projects.indexOf(project).toString()}
                         title={project["title"]}
                         body={project["body"]}
                         language={project["language"]}
