@@ -6,9 +6,9 @@ import img_passwordmanager from "./img/project-img/logo.png"
 import img_dummy from "./img/dummy.jpg"
 
 const animations = {
-    initial: {opacity:0,y:50},
+    initial: {opacity:0,y:0},
     animate: {opacity:1,y:0},
-    exit: {opacity:0,y:-100},
+    exit: {opacity:0,y:-100}
 };
 
 const projects = [
@@ -82,7 +82,6 @@ function Projects() {
     return (
         <div className="projectsContainer App">
             <Navibar/>
-
             <motion.div 
             className="cardsContainer"
             variants={animations}
