@@ -25,32 +25,41 @@ async function getAllAlbums() {
     return res.rows;
 };
 
+
+function getValueFromKey(object,tag) {
+    // IF OUR OBJECT IS EMPTY 
+    if (Object.keys(object) == []){
+        return null;
+    } else {
+        for (const [key, value] of Object.entries(object)) {
+            if (key === tag) {
+                return value;
+            }
+          }
+    }
+}
+
 "use-strict";
 // ARGS IS A LIST WITH THE ARGUMENTS (CAN BE ALSO 1 ARGUMENT)
 async function getFilteredAlbums(filter) {
+    var arrayOfKeys = Object.keys(filter);
+    var arrayOfvalues = Object.values(filter);
     // IF QUERY PARAMS ARE ONLY ONE 
-    if (Object.keys(filter).length == 1) {
-        for (const [key, value] of Object.entries(filter)) {
-            var column = key; 
-            var content = filter[key];
-        }
-        if (column === 'name') {
-            var res = await db.query("SELECT * FROM albums WHERE name = $1;",[content]);
-        } else if (column === 'band') {
-            var res = await db.query("SELECT * FROM albums WHERE band = $1;",[content]);  
-        } else if (column === 'genre') {
-            var res = await db.query("SELECT * FROM albums WHERE genre = $1;",[content]);
-        } else if (column === 'release_date_less_than') {
-            var res = await db.query("SELECT * FROM albums WHERE release_date < $1;",[content]);
-        } else if (column === 'release_date_more_than') {
-            var res = await db.query("SELECT * FROM albums WHERE release_date > $1;",[content]);    
-        } else if (column === 'rating') {
-            var res = await db.query("SELECT * FROM albums WHERE rating = $1;",[content]);
+    if (arrayOfKeys.length === 1) {
+        var column = arrayOfKeys[0];
+        var content = arrayOfvalues[0];
+        var single_param_query = `SELECT * FROM albums WHERE ${column} = $1;`
+        var res = await db.query(single_param_query,[content]);
+    } else if (arrayOfKeys.length === 2) {
+        // IF THE QUERY PARAMS ONLY INCLUDE A RANGE OF DATES
+        if (arrayOfKeys.includes("release_date_less_than") && arrayOfKeys.includes("release_date_more_than")){
+            var value_less_than = getValueFromKey(filter,'release_date_less_than');
+            var value_more_then = getValueFromKey(filter,'release_date_more_than');
+            var res = await db.query(`SELECT * FROM albums WHERE release_date < $1 AND release_date > $2`,[value_less_than,value_more_then]);
+
         } else {
             return null;
         }
-    } else { 
-        return null;
     }
     return res.rows;
 }
