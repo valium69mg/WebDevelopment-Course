@@ -28,25 +28,29 @@ async function getAllAlbums() {
 "use-strict";
 // ARGS IS A LIST WITH THE ARGUMENTS (CAN BE ALSO 1 ARGUMENT)
 async function getFilteredAlbums(filter) {
-    if (Object.keys(filter).length !== 1) {
-        return [];
-    }
-    for (const [key, value] of Object.entries(filter)) {
-        var column = key; 
-        var content = filter[key];
-    }
-    console.log(typeof(column));
-    console.log(typeof(content));
-    if (column === 'name') {
-        var res = await db.query("SELECT * FROM albums WHERE name = $1;",[content]);
-    } else if (column === 'band') {
-        var res = await db.query("SELECT * FROM albums WHERE band = $1;",[content]);
-    } else if (column === 'genre') {
-        var res = await db.query("SELECT * FROM albums WHERE genre = $1;",[content]);
-    } else if (column === 'release_date') {
+    // IF QUERY PARAMS ARE ONLY ONE 
+    if (Object.keys(filter).length == 1) {
+        for (const [key, value] of Object.entries(filter)) {
+            var column = key; 
+            var content = filter[key];
+        }
+        if (column === 'name') {
+            var res = await db.query("SELECT * FROM albums WHERE name = $1;",[content]);
+        } else if (column === 'band') {
+            var res = await db.query("SELECT * FROM albums WHERE band = $1;",[content]);  
+        } else if (column === 'genre') {
+            var res = await db.query("SELECT * FROM albums WHERE genre = $1;",[content]);
+        } else if (column === 'release_date_less_than') {
+            var res = await db.query("SELECT * FROM albums WHERE release_date < $1;",[content]);
+        } else if (column === 'release_date_more_than') {
+            var res = await db.query("SELECT * FROM albums WHERE release_date > $1;",[content]);    
+        } else if (column === 'rating') {
+            var res = await db.query("SELECT * FROM albums WHERE rating = $1;",[content]);
+        } else {
+            return null;
+        }
+    } else { 
         return null;
-    } else if (column === 'rating') {
-        var res = await db.query("SELECT * FROM albums WHERE rating = $1;",[content]);
     }
     return res.rows;
 }
@@ -84,6 +88,9 @@ app.get("/albums/all", async (req, res) => {
 app.get("/albums/filter", async (req,res) => {
     const filter = req.query;
     var data = await getFilteredAlbums(filter);
+    if (data == null){
+        res.sendStatus(400);
+    }
     res.json(data);
 });
 
