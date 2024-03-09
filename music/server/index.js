@@ -44,36 +44,83 @@ function getValueFromKey(object,tag) {
 async function getFilteredAlbums(filter) {
     var arrayOfKeys = Object.keys(filter);
     var arrayOfvalues = Object.values(filter);
+    var value_less_than = null;
+    var value_more_then = null;
+    var res = null;
     // IF QUERY PARAMS ARE ONLY ONE 
     if (arrayOfKeys.length === 1) {
         var column = arrayOfKeys[0];
         var content = arrayOfvalues[0];
         var single_param_query = `SELECT * FROM albums WHERE ${column} = $1;`
-        var res = await db.query(single_param_query,[content]);
+        res = await db.query(single_param_query,[content]);
+        return res.rows;
     } else if (arrayOfKeys.length === 2) {
         // IF THE QUERY PARAMS ONLY INCLUDE A RANGE OF DATES
         if (arrayOfKeys.includes("release_date_less_than") && arrayOfKeys.includes("release_date_more_than")){
-            var value_less_than = getValueFromKey(filter,'release_date_less_than');
-            var value_more_then = getValueFromKey(filter,'release_date_more_than');
-            var res = await db.query(`SELECT * FROM albums WHERE release_date < $1 AND release_date > $2`,[value_less_than,value_more_then]);
-
-        } else {
+            value_less_than = getValueFromKey(filter,'release_date_less_than');
+            value_more_then = getValueFromKey(filter,'release_date_more_than');
+            res = await db.query(`SELECT * FROM albums WHERE release_date < $1 AND release_date > $2`,[value_less_than,value_more_then]);
+            return res.rows;
+        } else if (arrayOfKeys.includes('rating_less_than') && arrayOfKeys.includes('rating_more_than')) {
+            // RANGE OF RATINGS 
+            value_less_than = getValueFromKey(filter,'rating_less_than');
+            value_more_then = getValueFromKey(filter,'rating_more_than');
+            res = await db.query(`SELECT * FROM albums WHERE rating < $1 AND rating > $2`,[value_less_than,value_more_then]);
+            return res.rows;
+        }
+        else {
             return null;
         }
-    }
-    return res.rows;
+    } else if (arrayOfKeys.length === 3) { // IF THERE IS 3 PARAMS
+        var date_range_conditional = arrayOfKeys.includes('release_date_less_than') && arrayOfKeys.includes('release_date_more_than');
+        var rating_range_conditional = arrayOfKeys.includes('rating_less_than') && arrayOfKeys.includes('rating_more_than')
+        // SEARCH BAND OR GENRE WITH DATE RANGE
+        if (date_range_conditional && rating_range_conditional === false) {
+            var value_band = getValueFromKey(filter,'band');
+            var value_genre = getValueFromKey(filter,'genre');
+            value_less_than = getValueFromKey(filter,'release_date_less_than');
+            value_more_then = getValueFromKey(filter,'release_date_more_than');
+            if (arrayOfKeys.includes('band')){
+                res = await db.query("SELECT * FROM albums WHERE band = $1 AND release_date < $2 AND release_date > $3",[value_band,value_less_than,value_more_then]);
+                return res.rows;
+            } else if (arrayOfKeys.includes('genre')){
+                res = await db.query("SELECT * FROM albums WHERE genre = $1 AND release_date < $2 AND release_date > $3",[value_genre,value_less_than,value_more_then]);
+                return res.rows;
+            } else {
+                return null;
+            }
+        } else if (date_range_conditional == false && rating_range_conditional) {
+            var value_band = getValueFromKey(filter,'band');
+            var value_genre = getValueFromKey(filter,'genre');
+            value_less_than = getValueFromKey(filter,'rating_less_than');
+            value_more_then = getValueFromKey(filter,'rating_more_than');
+            if (arrayOfKeys.includes('band')){
+                res = await db.query("SELECT * FROM albums WHERE band = $1 AND rating < $2 AND rating > $3",[value_band,value_less_than,value_more_then]);
+                return res.rows;
+            } else if (arrayOfKeys.includes('genre')){
+                res = await db.query("SELECT * FROM albums WHERE genre = $1 AND rating < $2 AND rating > $3",[value_genre,value_less_than,value_more_then]);
+                return res.rows;
+            } else {
+                return null;
+            }
+        } else {
+            return null
+        }      
+    } 
+
+    return null;
 }
 
-// GET ATTRIBUTES OF AN OBJECT
+// AUTHENTICATE USER
 
-var getKeys = function(obj){
-    var keys = [];
-    for(var key in obj){
-       keys.push(key);
+var isAuthenticated = async (token) => {
+    var user_row = await db.query("SELECT * FROM users WHERE authtoken = $1",[token])
+    if (user_row.rowCount === 0) {
+        return false;
+    } else if (user_row.rowCount === 1) {
+        return true;
     }
-    return keys;
- }
-
+}
 
 // Middleware
 "use-strinct";
@@ -82,25 +129,53 @@ app.use(express.static("public"));
 
 // GET ALL ALBUMS 
 "use-strinct";
-app.get("/albums/all", async (req, res) => {
-    var data = await getAllAlbums();
-    if (JSON.stringify(data) === "[]"){
-        res.sendStatus(404);
+app.get("/user/albums/all", async (req, res) => {
+    var data = null;
+    // AUTH TOKEN
+    var token = req.headers['auth-token']; // auth-token on heading for authentication
+    var auth = await isAuthenticated(token);
+    if (auth) {
+        data = await getAllAlbums().then(data => {
+            if (data != null) {
+                res.json(data);
+            } else {
+                res.sendStatus(404); // IF THE RESULT IS NULL IT MEANS IT DOES NOT EXIST ON DATA BASE
+            }   
+        }).catch(e => {
+            res.sendStatus(400);
+            console.log(e);
+        });
     } else {
-        res.json(data);
+        res.sendStatus(401); // NOT AUTHENTICATED
     }
   });
 
 
-  // GET ALBUMS BASED ON 1 FILTER
+// GET ALBUMS BASED ON 1 FILTER (band,genre,release_date,rating)
+// GET ALBUMS BETWEEN A RANGE (dates or rating)
+// GET ALBUMS BASED ON 1 FILTER (band,genre) and a range (dates or rating)
+
 "use-strinct";
-app.get("/albums/filter", async (req,res) => {
+app.get("/user/albums/filter", async (req,res) => {
     const filter = req.query;
-    var data = await getFilteredAlbums(filter);
-    if (data == null){
-        res.sendStatus(400);
+    var data = null;
+    // AUTH TOKEN
+    var token = req.headers['auth-token']; // auth-token on heading for authentication
+    var auth = await isAuthenticated(token);
+    if (auth) {
+        data = await getFilteredAlbums(filter).then(data => {
+            if (data !== null) {
+                res.json(data);
+            } else {
+                res.sendStatus(404); // IF THE RESULT IS NULL IT MEANS IT DOES NOT EXIST ON DATA BASE
+            }   
+        }).catch(e => {
+            res.sendStatus(400); // IF WE CATCH AN ERROR IN THE REQUEST WE SEND ERROR CODE 400
+            console.log(e);
+        });
+    } else {
+        res.sendStatus(401);
     }
-    res.json(data);
 });
 
 
