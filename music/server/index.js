@@ -1,11 +1,12 @@
 import express from "express";
+import cors from 'cors';
 import bodyParser from "body-parser";
 import pg from "pg";
 import generateToken from "./tools/token_gen.js";
 
 "use-strinct";
 const app = express();
-const port = 3000;
+const port = 3001;
 
 "use-strinct";
 const db = new pg.Client({
@@ -174,6 +175,12 @@ async function loginUser(mail,password) {
 "use-strinct";
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.use(cors());
+
+app.get('/cors', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.send('This has CORS enabled');
+})
 
 // GET ALL ALBUMS 
 "use-strinct";
