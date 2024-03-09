@@ -1,8 +1,7 @@
 // FUNCTION TO GENERATE TOKEN
 
-var length_of_token = 48
 
-function generateToken(n) {
+function generateToken(n=48) {
     var chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     var token = '';
     for(var i = 0; i < n; i++) {
@@ -11,4 +10,4 @@ function generateToken(n) {
     return token;
 }
 
-console.log(generateToken(length_of_token));
+export default generateToken;

@@ -1,7 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
-
+import generateToken from "./tools/token_gen.js";
 
 "use-strinct";
 const app = express();
@@ -51,9 +51,25 @@ async function getFilteredAlbums(filter) {
     if (arrayOfKeys.length === 1) {
         var column = arrayOfKeys[0];
         var content = arrayOfvalues[0];
-        var single_param_query = `SELECT * FROM albums WHERE ${column} = $1;`
-        res = await db.query(single_param_query,[content]);
-        return res.rows;
+        // RATING LESS THAN OR MORE THAN 
+        if (arrayOfKeys.includes('rating_less_than')) {
+            res = await db.query("SELECT * FROM albums WHERE rating < $1",[content]);
+            return res.rows;
+        } else if (arrayOfKeys.includes('rating_more_than')) {
+            res = await db.query("SELECT * FROM albums WHERE rating > $1",[content]);
+            return res.rows;
+        } else if (arrayOfKeys.includes('release_date_less_than')) {
+            res = await db.query("SELECT * FROM albums WHERE release_date < $1",[content]);
+            return res.rows;
+        } else if (arrayOfKeys.includes('release_date_more_than')) {
+            res = await db.query("SELECT * FROM albums WHERE release_date > $1",[content]);
+            return res.rows;
+        } else {
+            var single_param_query = `SELECT * FROM albums WHERE ${column} = $1;`
+            res = await db.query(single_param_query,[content]);
+            return res.rows;
+        }
+        
     } else if (arrayOfKeys.length === 2) {
         // IF THE QUERY PARAMS ONLY INCLUDE A RANGE OF DATES
         if (arrayOfKeys.includes("release_date_less_than") && arrayOfKeys.includes("release_date_more_than")){
@@ -112,7 +128,7 @@ async function getFilteredAlbums(filter) {
 }
 
 // AUTHENTICATE USER
-
+"use-strinct";
 var isAuthenticated = async (token) => {
     var user_row = await db.query("SELECT * FROM users WHERE authtoken = $1",[token])
     if (user_row.rowCount === 0) {
@@ -121,6 +137,38 @@ var isAuthenticated = async (token) => {
         return true;
     }
 }
+
+"use-strinct";
+async function isUserTaken(mail) {
+    var user_row = await db.query("SELECT * FROM users WHERE mail = $1",[mail]);
+    if (user_row.rowCount === 0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+"use-strinct";
+async function registerUser(mail,password) {
+    var user_token = generateToken();
+    var insert_credentials = await db.query("INSERT INTO users (mail,password,authtoken) VALUES ($1,$2,$3)",[mail,password,user_token]).then(insert_credentials => {
+        return true;
+    }).catch(e => {
+        console.log(e);
+        return false;
+    });
+    return false;
+}
+
+async function loginUser(mail,password) {
+    var gettoken = await db.query("SELECT authtoken FROM users WHERE mail = $1  AND password = $2;",[mail,password]);
+    if (gettoken.rows[0]) {
+        return gettoken.rows[0];
+    }  else {
+        return false;
+    }
+}
+
 
 // Middleware
 "use-strinct";
@@ -177,6 +225,35 @@ app.get("/user/albums/filter", async (req,res) => {
         res.sendStatus(401);
     }
 });
+
+// MANAGE USER REGISTER AND LOGIN
+app.post("/register", async (req,res) => {
+    var username = req.query.username;
+    var password = req.query.password;
+    var user_exist = await isUserTaken(username);
+    if (user_exist) {
+        res.sendStatus(409);
+    } else {
+        var register_user = registerUser(username,password);
+        if (register_user) {
+            res.sendStatus(200);
+        } else {
+            res.sendStatus(409);
+        }
+    }
+});
+
+app.post("/login", async (req,res) => {
+    var username = req.query.username;
+    var password = req.query.password;
+    var logged_in = await loginUser(username,password); 
+    if (logged_in !== false) {
+        res.json(logged_in);
+    } else {
+        res.sendStatus(401);
+    }
+    
+})
 
 
 app.listen(port, () => {
