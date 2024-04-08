@@ -1,0 +1,18 @@
+
+/* WATERMARK CSS */
+
+.watermark {
+    display: flex;
+    flex-direction: row;
+    column-gap: 6px;
+    flex-grow: 1;
+    align-items: center;
+    
+}
+
+.watermark h1 {
+    color: #e45370;
+    line-height: 1.3em;
+    font-size: 16px;
+}
+

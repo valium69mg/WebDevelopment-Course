@@ -1,6 +1,7 @@
 import React from "react";
-import Watermark from "./whatermark";
+import Watermark from "./Whatermark";
 import {Link} from "react-router-dom";
+import './styles/navbarStyles.css';
 
 function Navibar(){
     return (

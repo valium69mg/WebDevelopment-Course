@@ -1,6 +1,7 @@
 import React from "react";
-import Navibar from "./navbar";
+import Navibar from "./Navbar";
 import {motion} from "framer-motion";
+import './styles/contactCardsStyle.css';
 
 const contactInfo = [
     {

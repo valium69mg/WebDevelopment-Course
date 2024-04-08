@@ -1,10 +1,10 @@
 import React from "react";
 import {BrowserRouter as Router,Route,Routes} from "react-router-dom";
 
-import Home from "./home";
-import Contact from "./contact";
-import Projects from "./projects";
-import Resume from "./resume";
+import Home from "./Home";
+import Contact from "./Contact";
+import Projects from "./Projects";
+import Resume from "./Resume";
 
 
 function App() {

@@ -1,0 +1,59 @@
+.navibar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 24px;
+    background-color: black;
+    box-shadow: 0px 1px 6px 3px rgba(0,0,0,0.25);
+    padding: 12px;
+    margin: 6px;
+    width: calc(100% - 6px);
+    border-radius: 12px;
+}
+
+.navibar a {
+    color: #e45370;
+    background-color: transparent;
+    /* links */
+    text-decoration: none;
+
+    transition: 0.5s ease;
+    position: relative;
+}
+
+.navibar a:before {
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #e45370;
+    transform: scaleX(0);
+    transition: all 0.5s;
+    transform-origin: left;
+}
+
+.navibar a:hover:before {
+    transform: scaleX(1);
+}
+
+.navibar a:after {
+    content: '';
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #e45370;
+    transform: scaleX(0);
+    transition: all 0.5s;
+    transform-origin: right;
+}
+.navibar a:hover:after {
+    transform: scaleX(1);
+}
+
+.navibar a:hover {
+    transform: scale(1.1);
+}
