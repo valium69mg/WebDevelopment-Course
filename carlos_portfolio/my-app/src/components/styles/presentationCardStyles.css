@@ -11,7 +11,7 @@
     justify-content: center; /* COLUMN ALIGNMENT*/
     align-items: center; /* ROW ALIGNMENT*/
     box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.25);
-    width: 60%;
+    width: 90%;
     padding: 24px 12px;
     background-color: black;
 }
@@ -95,6 +95,12 @@
 
 /* MIN WIDTH 1200 px*/
 @media (max-width:1200px) {
+
+    .presentationCard {
+        width: 95%;
+    }
+    
+
     .presentationCard-paragraph p{
         color: white;
         text-align: justify;
@@ -106,8 +112,8 @@
     }
 
     .wrapper {
-        height: 200px;
-        width: 200px; 
+        height: 260px;
+        width: 260px; 
         overflow: hidden;
     }
     
@@ -118,18 +124,41 @@
 /* MIN WIDTH 992 px*/
 @media (max-width:992px) {
     .presentationCard {
+        display: flex;
+        flex-direction: column;
+        column-gap: 24px;
+        row-gap: 24px;
+        /* JUSTIFY CONTENT IS FOR PLACING THE PRESENTATION CARD IN THE MIDDLE*/
+        justify-content: center; /* COLUMN ALIGNMENT*/
+        align-items: center; /* ROW ALIGNMENT*/
+        box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.25);
+        width: 90%;
+        padding: 24px 12px;
+        background-color: black;
+    }
 
-        width: 75%;
+    .presentationCard-paragraph{
+        max-width: 75%;
+        display: flex;
+        row-gap: 24px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
     }
     
     .presentationCard-paragraph p{
         color: white;
-        text-align: justify;
+        text-align: center;
         font-style: italic;
         letter-spacing: 0.03em;
         line-height: 1.5em;
-        font-size: 14px;
+        font-size: 24px;
+        
+    }
+
+    .presentationCard-paragraph h1{
+        font-size: 32px;
         
     }
 
@@ -145,24 +174,40 @@
 /* MIN WIDTH 768 px*/
 @media (max-width:768px) {
     .presentationCard {
-
-        width: 75%;
+        display: flex;
+        flex-direction: column;
+        column-gap: 24px;
+        row-gap: 24px;
+        /* JUSTIFY CONTENT IS FOR PLACING THE PRESENTATION CARD IN THE MIDDLE*/
+        justify-content: center; /* COLUMN ALIGNMENT*/
+        align-items: center; /* ROW ALIGNMENT*/
+        box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.25);
+        width: 90%;
+        padding: 24px 12px;
+        background-color: black;
 
     }
     
     .presentationCard-paragraph p{
         color: white;
-        text-align: justify;
+        text-align: center;
         font-style: italic;
         letter-spacing: 0.03em;
         line-height: 1.5em;
-        font-size: 14px;
+        font-size: 38px;
+        width: calc(95% - 18px);
+        
+    }
+
+    .presentationCard-paragraph h1{
+        font-size: 52px;
+   
         
     }
 
     .wrapper {
-        height: 200px;
-        width: 200px; 
+        height: 280px;
+        width: 280px; 
         overflow: hidden;
     }
     
@@ -172,22 +217,40 @@
 /* MIN WIDTH 680 px*/
 @media (max-width:680px) {
     .presentationCard {
-        width: 75%;
+        display: flex;
+        flex-direction: column;
+        column-gap: 24px;
+        row-gap: 24px;
+        /* JUSTIFY CONTENT IS FOR PLACING THE PRESENTATION CARD IN THE MIDDLE*/
+        justify-content: center; /* COLUMN ALIGNMENT*/
+        align-items: center; /* ROW ALIGNMENT*/
+        box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.25);
+        width: 90%;
+        padding: 24px 12px;
+        background-color: black;
+
     }
     
     .presentationCard-paragraph p{
         color: white;
-        text-align: justify;
+        text-align: center;
         font-style: italic;
         letter-spacing: 0.03em;
         line-height: 1.5em;
-        font-size: 11px;
+        font-size: 38px;
+        width: calc(95% - 18px);
+        
+    }
+
+    .presentationCard-paragraph h1{
+        font-size: 52px;
+   
         
     }
 
     .wrapper {
-        height: 120px;
-        width: 120px; 
+        height: 280px;
+        width: 280px; 
         overflow: hidden;
     }
 
@@ -196,28 +259,85 @@
 /* MIN WIDTH 680 px*/
 @media (max-width:500px) {
     .presentationCard {
+        display: flex;
+        flex-direction: column;
+        column-gap: 24px;
+        row-gap: 24px;
+        /* JUSTIFY CONTENT IS FOR PLACING THE PRESENTATION CARD IN THE MIDDLE*/
+        justify-content: center; /* COLUMN ALIGNMENT*/
+        align-items: center; /* ROW ALIGNMENT*/
+        box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.25);
         width: 90%;
-    }
+        padding: 24px 12px;
+        background-color: black;
 
-    .presentationCard-paragraph h1{
-        font-size: 16px;
-        
     }
     
     .presentationCard-paragraph p{
         color: white;
-        text-align: justify;
+        text-align: center;
         font-style: italic;
         letter-spacing: 0.03em;
         line-height: 1.5em;
-        font-size: 10px;
+        font-size: 38px;
+        width: calc(95% - 18px);
+        
+    }
+
+    .presentationCard-paragraph h1{
+        font-size: 52px;
+        text-align: center;
         
     }
 
     .wrapper {
-        height: 80px;
-        width: 80px; 
+        height: 280px;
+        width: 280px; 
         overflow: hidden;
     }
+
+
+}
+
+@media (max-width:380px) {
+    .presentationCard {
+        display: flex;
+        flex-direction: column;
+        column-gap: 24px;
+        row-gap: 24px;
+        /* JUSTIFY CONTENT IS FOR PLACING THE PRESENTATION CARD IN THE MIDDLE*/
+        justify-content: center; /* COLUMN ALIGNMENT*/
+        align-items: center; /* ROW ALIGNMENT*/
+        box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.25);
+        width: 90%;
+        padding: 24px 12px;
+        background-color: black;
+
+    }
+    
+    .presentationCard-paragraph p{
+        color: white;
+        text-align: center;
+        font-style: italic;
+        letter-spacing: 0.03em;
+        line-height: 1.5em;
+        font-size: 38px;
+        width: calc(95% - 18px);
+        
+    }
+
+    .presentationCard-paragraph h1{
+        font-size: 52px;
+        text-align: center;
+   
+        
+    }
+
+    .wrapper {
+        height: 280px;
+        width: 280px; 
+        overflow: hidden;
+    }
+
 
 }
