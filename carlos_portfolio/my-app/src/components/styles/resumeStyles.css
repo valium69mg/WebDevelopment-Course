@@ -3,7 +3,7 @@
 
 .resume {
     display: flex;
-    width: 40%;
+    width: 60%;
     justify-content: center;
     align-items: center;
     row-gap: 12px;
@@ -11,12 +11,12 @@
     backdrop-filter: blur(16px);
     box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.25);
     background-color: black;
-    width: 100%;
 }
 
 .resumeCard {
     display: flex;
     row-gap: 18px;
+    
 }
     
 .resume h1 {
@@ -61,3 +61,10 @@
 }
 
 
+/* MIN WIDTH 600 px*/
+@media (max-width:500px) {
+    .resume {
+        text-align: center;
+        width: 80%;
+    }
+}

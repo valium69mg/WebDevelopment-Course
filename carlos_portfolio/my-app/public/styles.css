@@ -25,3 +25,10 @@ body {
 
 
 
+/* MIN WIDTH 600 px*/
+@media (max-width:500px) {
+    .App {
+
+        row-gap: 12px;
+    }
+}

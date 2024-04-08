@@ -10,12 +10,10 @@
     /* JUSTIFY CONTENT IS FOR PLACING THE PRESENTATION CARD IN THE MIDDLE*/
     justify-content: center; /* COLUMN ALIGNMENT*/
     align-items: center; /* ROW ALIGNMENT*/
-    backdrop-filter: blur(16px);
     box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.25);
-    width: 80%;
+    width: 60%;
     padding: 24px 12px;
     background-color: black;
-    width: 100%;
 }
 
 
@@ -92,5 +90,134 @@
     border-radius: 50%;
 
     border: 3px solid white;
+
+}
+
+/* MIN WIDTH 1200 px*/
+@media (max-width:1200px) {
+    .presentationCard-paragraph p{
+        color: white;
+        text-align: justify;
+        font-style: italic;
+        letter-spacing: 0.03em;
+        line-height: 1.5em;
+        font-size: 16px;
+        
+    }
+
+    .wrapper {
+        height: 200px;
+        width: 200px; 
+        overflow: hidden;
+    }
+    
+
+}
+
+
+/* MIN WIDTH 992 px*/
+@media (max-width:992px) {
+    .presentationCard {
+
+        width: 75%;
+
+    }
+    
+    .presentationCard-paragraph p{
+        color: white;
+        text-align: justify;
+        font-style: italic;
+        letter-spacing: 0.03em;
+        line-height: 1.5em;
+        font-size: 14px;
+        
+    }
+
+    .wrapper {
+        height: 200px;
+        width: 200px; 
+        overflow: hidden;
+    }
+    
+
+}
+
+/* MIN WIDTH 768 px*/
+@media (max-width:768px) {
+    .presentationCard {
+
+        width: 75%;
+
+    }
+    
+    .presentationCard-paragraph p{
+        color: white;
+        text-align: justify;
+        font-style: italic;
+        letter-spacing: 0.03em;
+        line-height: 1.5em;
+        font-size: 14px;
+        
+    }
+
+    .wrapper {
+        height: 200px;
+        width: 200px; 
+        overflow: hidden;
+    }
+    
+
+}
+
+/* MIN WIDTH 680 px*/
+@media (max-width:680px) {
+    .presentationCard {
+        width: 75%;
+    }
+    
+    .presentationCard-paragraph p{
+        color: white;
+        text-align: justify;
+        font-style: italic;
+        letter-spacing: 0.03em;
+        line-height: 1.5em;
+        font-size: 11px;
+        
+    }
+
+    .wrapper {
+        height: 120px;
+        width: 120px; 
+        overflow: hidden;
+    }
+
+}
+
+/* MIN WIDTH 680 px*/
+@media (max-width:500px) {
+    .presentationCard {
+        width: 90%;
+    }
+
+    .presentationCard-paragraph h1{
+        font-size: 16px;
+        
+    }
+    
+    .presentationCard-paragraph p{
+        color: white;
+        text-align: justify;
+        font-style: italic;
+        letter-spacing: 0.03em;
+        line-height: 1.5em;
+        font-size: 10px;
+        
+    }
+
+    .wrapper {
+        height: 80px;
+        width: 80px; 
+        overflow: hidden;
+    }
 
 }

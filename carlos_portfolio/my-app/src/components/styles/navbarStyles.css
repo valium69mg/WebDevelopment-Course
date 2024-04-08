@@ -1,3 +1,5 @@
+
+/* 1920 X 1080*/
 .navibar {
     display: flex;
     flex-direction: row;
@@ -56,4 +58,26 @@
 
 .navibar a:hover {
     transform: scale(1.1);
+}
+
+/* MIN WIDTH 680 px*/
+@media (max-width:500px) {
+    .navibar {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        column-gap: 24px;
+        background-color: black;
+        box-shadow: 0px 1px 6px 3px rgba(0,0,0,0.25);
+        padding: 12px 24px;
+        margin: 6px;
+        width: calc(95%);
+        border-radius: 12px;
+    }
+
+    .navibar a {
+        font-size: 12px;
+        width: 80%;
+    }
+    
 }

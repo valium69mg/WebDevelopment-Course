@@ -26,14 +26,14 @@ const projects = [
     },
     {
         "title": "Portfolio Website",
-        "body": "Portfolio webpage made with react and bootstrap. The website contains animated icons and loading pages displaying a react skills.  ",
+        "body": "Personal portfolio webpage made with react and bootstrap. The website contains animated icons and smooth transitions to make the best UI experience.",
         "img":img_portfolio,
         "language1":"React",
         "language2":"Bootstrap",
         "language3":"CSS Animations",
     },
     {
-        "title": "Infinite Scroll Bible Verses",
+        "title": "Infinite Scroll",
         "body": "React aplication made to display random bible verses, when hitting the bottom of the page renders new content.",
         "img":img_infinites_scroll,
         "language1":"React",

@@ -8,7 +8,7 @@
     align-items: center;
     background-color: black;
     padding: 24px 24px;
-    width: 100%;
+    width: 60%;
 }
 
 .contactCards {
@@ -27,3 +27,10 @@
     color: white;
 }
 
+/* MIN WIDTH 600 px*/
+@media (max-width:500px) {
+    .contactCards {
+
+        width: 80%;
+    }
+}

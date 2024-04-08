@@ -5,13 +5,16 @@
 .logos {
     display: flex;
     flex-direction: row;
-    padding: 3vh;
+    padding: 16px;
+    margin-top: 48px;
     justify-content: center;
     column-gap: 48px;
     backdrop-filter: blur(8px);
     box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.25);
     background-color: black;
-    width: 100%;
+    width: 75%;
+    border-radius: 12px;
+
 }
 
 .logos img {
@@ -23,4 +26,64 @@
     font-size: 5vh;
     font-style: italic;
     letter-spacing: -0.05em;
+}
+
+/* MIN WIDTH 1200 px*/
+@media (max-width:1200px) {
+    .logos img {
+        width: 48px;
+    }
+}
+
+/* MIN WIDTH 992 px*/
+@media (max-width:992px) {
+    .logos {
+
+        width: 95%;
+   
+    
+    }
+
+}
+
+/* MIN WIDTH 768 px*/
+@media (max-width:768px) {
+    .logos {
+
+        width: 90%;
+   
+    }
+    .logos img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .logos h1 {
+        color: #9e2a57;
+        font-size: 24px;
+        font-style: italic;
+        letter-spacing: -0.05em;
+    }
+}
+
+
+/* MIN WIDTH 680 px*/
+@media (max-width:680px) {
+    .logos {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 12px;
+        width: 70%;
+        justify-items: center;
+        align-content: center;
+
+    }
+
+    .logos h1 {
+        grid-column: 1 / span 3;
+        justify-self: center;
+    }
+    
+
+
 }

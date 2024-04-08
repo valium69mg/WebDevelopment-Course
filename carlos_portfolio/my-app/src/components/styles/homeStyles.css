@@ -8,3 +8,25 @@
     align-items: center;
     
 }
+
+
+/* MIN WIDTH 680 px*/
+@media (max-width:680px) {
+    .homeContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+}
+
+/* MIN WIDTH 600 px*/
+@media (max-width:500px) {
+    .homeContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 12px;
+    }
+}
