@@ -26,10 +26,10 @@
     width: 80%;
     height:300px;
     row-gap: 3px;
-    padding: 6px 12px;
+    padding: 24px 12px;
     box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.25);
     border-radius: 12px;
-    background-color: black;
+    background-color: #FDE5EC;
     transition: all 0.5s;
 }
 
@@ -62,8 +62,8 @@
 
 .projectCard p {
     text-align: center;
-    font-size: 10px;
-    color: gray;
+    font-size: 14px;
+    color: black;
     height: 30%;
     width: calc(100% - 6px);
 }
@@ -106,6 +106,8 @@
     .projectCard {
         height:420px;
         width: 95%;
+        padding: 18px 12px;
+
 
     }
 
@@ -133,8 +135,7 @@
 
     .projectCard p {
         text-align: center;
-        font-size: 18px;
-        color: gray;
+        font-size: 16px;
         height: 30%;
         width: calc(100% - 6px);
     }
@@ -183,7 +184,6 @@
     .projectCard p {
         text-align: center;
         font-size: 18px;
-        color: gray;
         height: 30%;
         width: calc(100% - 6px);
     }
@@ -231,7 +231,6 @@
     .projectCard p {
         text-align: center;
         font-size: 16px;
-        color: gray;
         height: 30%;
         width: calc(100% - 6px);
     }
@@ -274,6 +273,12 @@
     .projectCard {
         height:500px;
         width: 95%;
+
+    }
+
+    .projectCard p {
+        
+        font-size: 16px;
 
     }
    

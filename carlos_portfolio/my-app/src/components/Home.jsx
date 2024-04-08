@@ -23,6 +23,7 @@ const AnimatedHome = () => {
             transition={{duration:1}}
         >
             <PresentationCard/>
+
             <Logos/>
             
         </motion.div>

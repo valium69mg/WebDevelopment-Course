@@ -8,10 +8,11 @@
     padding: 24px 24px;
     margin-top: 48px;
     justify-content: center;
+    align-items: center;
     column-gap: 48px;
+    background-color: #FDE5EC;
     backdrop-filter: blur(8px);
     box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.25);
-    background-color: black;
     width: fit-content;
     border-radius: 12px;
 
@@ -24,7 +25,7 @@
 }
 
 .logos h1 {
-    color: #9e2a57;
+    color: #e45370;
     font-size: 5vh;
     font-style: italic;
     letter-spacing: -0.05em;
