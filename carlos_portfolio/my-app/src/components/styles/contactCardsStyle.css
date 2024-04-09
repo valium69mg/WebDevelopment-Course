@@ -1,7 +1,6 @@
 
 
 /* CONTACT CARDS */
-
 .contactCards {
     display: flex;
     flex-direction: column;
@@ -11,12 +10,9 @@
     border-radius: 12px;
 
 }
-
 .contactCards {
     flex: 1;
 }
-
-
 
 .contactCards h1 {
     color: #e45370;
@@ -36,7 +32,6 @@
 /* MIN WIDTH 600 px*/
 @media (max-width:500px) {
     .contactCards {
-
         width: 80%;
     }
 }

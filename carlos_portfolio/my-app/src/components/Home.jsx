@@ -1,7 +1,6 @@
 import React from "react";
 import Navibar from "./Navbar";
 import PresentationCard from "./PresentationCard";
-import Logos from "./Logos";
 import './styles/homeStyles.css';
 
 import {motion} from "framer-motion";

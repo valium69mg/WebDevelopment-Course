@@ -13,6 +13,8 @@
 
 }
 
+
+
 .logos img {
     width: 58px;
     margin-top: 24px;
@@ -23,7 +25,6 @@
     color: #e45370;
     font-size: 24px;
     font-style: italic;
-    letter-spacing: -0.05em;
 }
 
 /* MIN WIDTH 1200 px*/
@@ -42,12 +43,9 @@
 /* MIN WIDTH 992 px*/
 @media (max-width:992px) {
     .logos {
-        display: grid;
         grid-template-columns: 1fr 1fr;
         row-gap: 12px;
         width: 70%;
-        justify-items: center;
-        align-content: center;
         row-gap: 24px;
         margin: 12px;
     }
@@ -67,12 +65,7 @@
 /* MIN WIDTH 768 px*/
 @media (max-width:768px) {
     .logos {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
         width: calc(95%);
-        justify-items: center;
-        align-content: center;
-        margin: 12px;
     }
     .logos img {
         width: 120px;
@@ -83,7 +76,6 @@
         color: #9e2a57;
         font-size: 60px;
         font-style: italic;
-        letter-spacing: -0.05em;
     }
 }
 
@@ -91,65 +83,23 @@
 /* MIN WIDTH 680 px*/
 @media (max-width:680px) {
     .logos {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        width: calc(95%);
-        justify-items: center;
-        align-content: center;
         row-gap: 100px;
         margin: 12px;
     }
-    .logos img {
-        width: 120px;
-    }
-
-    .logos h1 {
-        grid-column: 1 / span 2;
-        color: #9e2a57;
-        font-size: 60px;
-        font-style: italic;
-        letter-spacing: -0.05em;
-    }
-    
-
 
 }
 
 @media (max-width:500px) {
     .logos {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        width: 80%;
-        justify-items: center;
-        align-content: center;
         row-gap: 100px;
-        margin: 12px;
     }
-    .logos img {
-        width: 120px;
-    }
-
-    .logos h1 {
-        grid-column: 1 / span 2;
-        color: #9e2a57;
-        font-size: 60px;
-        font-style: italic;
-        letter-spacing: -0.05em;
-    }
-    
-
 
 }
 
 @media (max-width:380px) {
     .logos {
-        display: grid;
         grid-template-columns: 1fr;
         width: 80%;
-        justify-items: center;
-        align-content: center;
-        row-gap: 100px;
-        margin: 12px;
     }
     .logos img {
         width: 120px;
@@ -157,12 +107,8 @@
 
     .logos h1 {
         grid-column: 1 / span 1;
-        color: #9e2a57;
         font-size: 48px;
-        font-style: italic;
-        letter-spacing: -0.05em;
     }
     
-
 
 }
