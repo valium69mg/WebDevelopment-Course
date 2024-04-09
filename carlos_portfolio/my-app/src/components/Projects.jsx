@@ -65,12 +65,14 @@ function ProjectCard(props) {
   return (
     <div className="projectCard">
         <img src={props.img} alt={props.alt}></img>
+        <div className="projectBodyCard">
         <h2> {props.title} </h2>
         <p> {props.body.slice(0,140) + '...'} </p>
         <div className="languageParagraphContainer">
             <h3 className="languageParagraph"> {props.language1}</h3>
             <h3 className="languageParagraph"> {props.language2}</h3>
             <h3 className="languageParagraph"> {props.language3}</h3>
+        </div>
         </div>
     </div>
   );

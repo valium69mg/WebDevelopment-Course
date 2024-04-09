@@ -16,9 +16,10 @@
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 24px;
     column-gap: 12px;
-    padding: 24px;
-    backdrop-filter: blur(16px);
+    padding: 0px 24px;
 }
+
+
 
 .projectCard {
     display: flex;
@@ -27,63 +28,41 @@
     align-items: center;
     height:400px;
     row-gap: 3px;
-    padding: 24px 12px;
     box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.25);
-    border-radius: 12px;
     background-color: #FDE5EC;
     transition: all 0.5s;
+    width: 100%;
 }
 
-.projectCard:hover {
-    background-color: transparent;
-    transform: scale(105%);
+.projectBodyCard {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
 }
 
-.projectCard:hover p  {
-    color:black;
-
-}
-
-
-.projectCard h2 {
-    margin-top: 12px;
+.projectBodyCard h2 {
     font-size: 24px;
-    letter-spacing: -0.05em;
-    text-align: center;
-    color: white;
-    background-color: #e45370;
-    padding: 12px 24px;
-    border-radius: 12px;
-    width: 90%;
+    text-align: left;
+    color: #e45370;
 }
 
-.projectCard h3 {
-    font-size: 12px;
-    letter-spacing: -0.05em;
-    height: 10%;
-}
 
-.projectCard p {
-    text-align: justify;
+.projectBodyCard h3 {
     font-size: 16px;
-    color: black;
-    height: 35%;
-    width: calc(100% - 6px);
-    padding: 0px 24px; 
-    letter-spacing: normal;
-    border-radius: 12px;
 }
+
 
 .projectCard img {
-    width: 180px;
-    height: 120px;
-
+    width: 100%;
+    height: 50%;
 }
+
+
 
 
 .languageParagraph {
     color: #e45370;
-
 }
 
 .languageParagraphContainer  {
@@ -101,153 +80,50 @@
 /* MIN WIDTH 1200 px*/
 @media (max-width:1200px) {
 
-    
     .cardsContainer {
-        display: grid;
         grid-template-columns: 1fr 1fr;
-        row-gap: 24px;
-        column-gap: 12px;
-        padding: 24px;
-        backdrop-filter: blur(16px);
     }
+    
     .projectCard {
         height:420px;
-        width: 95%;
-        padding: 18px 12px;
-
 
     }
 
-    .projectCard h2 {
-        margin-top: 12px;
-        font-size: 24px;
-        letter-spacing: -0.05em;
-        text-align: center;
-        
-    }
-
-    .projectCard img {
-        width: 300px;
-        height: 220px;
-        border-radius: 12px;
-    }
-
-    .projectCard h3 {
-        font-size: 16px;
-        letter-spacing: -0.05em;
-        height: 10%;
-    }
-
-    .projectCard p {
-        text-align: justify;
-        font-size: 16px;
-        height: 30%;
-        width: calc(100% - 6px);
-    }
     
     
 }
 /* MIN WIDTH 992 px*/
 @media (max-width:992px) {
-    
     .cardsContainer {
-        display: grid;
         grid-template-columns: 1fr 1fr;
-        row-gap: 24px;
-        column-gap: 12px;
-        padding: 24px;
-        backdrop-filter: blur(16px);
     }
+
     .projectCard {
         height:500px;
-        width: 95%;
-
     }
-
-    .projectCard h2 {
-        margin-top: 12px;
-        font-size: 24px;
-        letter-spacing: -0.05em;
-        text-align: center;
-        
-    
+    .projectBodyCard p {
+        font-size: 18px; 
     }
-
-    .projectCard img {
-        width: 300px;
-        height: 220px;
-        border-radius: 12px;
-    }
-
-    .projectCard h3 {
-        font-size: 16px;
-        letter-spacing: -0.05em;
-        height: 10%;
-    }
-
-    .projectCard p {
-        text-align: justify;
-        font-size: 18px;
-        height: 30%;
-        width: calc(100% - 6px);
-    }
-    
 }
-
 /* MIN WIDTH 768 px*/
 @media (max-width:768px) {
     .cardsContainer {
-        display: grid;
         grid-template-columns: 1fr 1fr;
-        row-gap: 24px;
-        column-gap: 12px;
-        padding: 24px;
-        backdrop-filter: blur(16px);
-    }
-    .projectCard {
-        height:500px;
-        width: 95%;
-
     }
 
-    .projectCard h2 {
-        margin-top: 12px;
-        font-size: 24px;
-        letter-spacing: -0.05em;
-        text-align: center;
-        
-    
-    }
-
-    .projectCard img {
-        width: 220px;
-        height: 180px;
-        border-radius: 12px;
-    }
-
-    .projectCard h3 {
+    .projectBodyCard h3 {
         font-size: 16px;
-        letter-spacing: -0.05em;
-        height: 10%;
     }
 
-    .projectCard p {
-        text-align: justify;
+    .projectBodyCard p {
         font-size: 16px;
-        height: 30%;
-        width: calc(100% - 6px);
     }
 }
 
 /* MIN WIDTH 680 px*/
 @media (max-width:680px) {
     .cardsContainer {
-        display: grid;
         grid-template-columns: 1fr 1fr;
-        row-gap: 24px;
-        column-gap: 12px;
-        padding: 24px;
-        backdrop-filter: blur(16px);
     }
 }
 
@@ -255,18 +131,11 @@
 /* MIN WIDTH 680 px*/
 @media (max-width:500px) {
     .cardsContainer {
-        display: grid;
         grid-template-columns: 1fr;
-        row-gap: 24px;
-        column-gap: 12px;
-        padding: 24px;
-        backdrop-filter: blur(16px);
     }
 
 
-    .projectCard p {
-        text-align: justify;
-
+    .projectBodyCard p {
         font-size: 18px;
    
     }
@@ -274,14 +143,8 @@
 
 /* MIN WIDTH 680 px*/
 @media (max-width:380px) {
-    .projectCard {
-        height:500px;
-        width: 95%;
 
-    }
-
-    .projectCard p {
-        text-align: justify;
+    .projectBodyCard p {
 
         font-size: 16px;
 
