@@ -20,8 +20,17 @@
     flex-direction: column;
     width: 50%;
 }
+
+.homeButtons {
+    display: flex;
+    column-gap: 12px;
+}
+
+
+
+
 /* See my work button */
-.presentationCard-paragraph a {
+.presentationCard-paragraph #button1 {
     background-color: none;
     width: 120px;
     padding: 6px 12px;
@@ -34,7 +43,7 @@
     text-align: center;
 }
 
-.presentationCard-paragraph a:before {
+.presentationCard-paragraph #button1:before {
     content: '';
     position: absolute;
     top:0;
@@ -47,13 +56,49 @@
     transition: all 0.5s;
  }
 
- .presentationCard-paragraph a:hover:before {
+ .presentationCard-paragraph #button1:hover:before {
     height: 100%;
  }
 
-.presentationCard-paragraph a:hover {
+.presentationCard-paragraph #button1:hover {
    transform: scale(1.05);
    color: white;
+}
+
+/* See resume button */
+.presentationCard-paragraph #button2 {
+    background-color: none;
+    width: 120px;
+    padding: 6px 12px;
+    color: #9e2a57;
+    border: 2px solid #9e2a57;
+    text-decoration: none;
+    transition: all 0.5s;
+    position: relative;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.presentationCard-paragraph #button2:before {
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: -1;
+    height: 0%;
+    transition: all 0.5s;
+ }
+
+ .presentationCard-paragraph #button2:hover:before {
+    height: 100%;
+ }
+
+.presentationCard-paragraph #button2:hover {
+   transform: scale(1.05);
+   color: #9e2a57;
 }
 
 .presentationCard-paragraph h1{
@@ -70,8 +115,7 @@
     font-style: normal;
     letter-spacing: 0.03em;
     line-height: 1.5em;
-    font-size: 24px;
-    
+    font-size: 24px;    
 }
 
 .wrapper {
@@ -127,6 +171,14 @@
         width: 90%;
         padding: 24px 12px;
         height: fit-content;
+    }
+
+    .presentationCard-paragraph #button1 {
+        width: 200px;
+    }
+
+    .presentationCard-paragraph #button2 {
+        width: 200px;
     }
 
     .presentationCard-paragraph{
@@ -290,6 +342,12 @@
         width: 90%;
         padding: 24px 12px;
 
+    }
+
+    .homeButtons {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
     }
     
     .presentationCard-paragraph p{

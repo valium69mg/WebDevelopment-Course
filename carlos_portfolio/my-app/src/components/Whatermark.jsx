@@ -1,7 +1,7 @@
 import React from "react";
 import './styles/whatermarkStyles.css';
 
-const logo_fill = "#e45370";
+const logo_fill = "white";
 const viewbox = "0 0 10 25";
 
 function Watermark(){

@@ -13,7 +13,10 @@ function PresentationCard(){
         <div className="presentationCard-paragraph">
                 <h1> Hi, I am Carlos.</h1>
                 <p> I'm a Engineer, graduated from Tec de Monterrey. I focus my work on Web and App development, using various languages and frameworks.  </p>
-                <a href="/Projects"> See my work </a>
+                <div className="homeButtons">
+                    <a id="button1" href="/Projects"> my work </a>
+                    <a id="button2" href="/Resume"> my resume </a>
+                </div>
                 <Logos/>
             </div>
               
