@@ -53,6 +53,7 @@
     .logos h1 {
         grid-column: 1 / span 2;
         font-size: 48px;
+        text-align: center;
     }
 
     .logos img {
