@@ -7,24 +7,20 @@
     display: flex;
     flex-direction: row;
     column-gap: 24px;
-    /* JUSTIFY CONTENT IS FOR PLACING THE PRESENTATION CARD IN THE MIDDLE*/
-    justify-content: center; /* COLUMN ALIGNMENT*/
-    align-items: center; /* ROW ALIGNMENT*/
-    box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.25);
+    justify-content: center;
+    align-items: center;
     width: 90%;
-    padding: 24px 12px;
-    background-color: #FDE5EC;
-    border-radius: 12px;
+    height: 80vh;
 }
 
 
 
 .presentationCard-paragraph{
-    max-width: 50%;
     display: flex;
     flex-direction: column;
+    width: 50%;
 }
-
+/* See my work button */
 .presentationCard-paragraph a {
     background-color: none;
     width: 120px;
@@ -62,34 +58,33 @@
 
 .presentationCard-paragraph h1{
     color: #9e2a57;
-    text-align: justify;
-    font-size: 48px;
+    text-align: left;
     letter-spacing: -0.05em;
     line-height: 1.3em; /* FROM DESIGN TUTORIAL*/
-    font-size: 24px;
+    font-size: 80px;
 }
 
 .presentationCard-paragraph p{
     color: black;
     text-align: justify;
-    font-style: italic;
+    font-style: normal;
     letter-spacing: 0.03em;
     line-height: 1.5em;
-    font-size: 18px;
+    font-size: 24px;
     
 }
 
 .wrapper {
-    height: 260px;
-    width: 260px; 
+    height: 400px;
+    width: 400px; 
     overflow: hidden;
+    order: 1;
 }
 
 .wrapper img {
     height: 100%;
     width: auto;
     border-radius: 50%;
-
     border: 3px solid #9e2a57;
 
 }
@@ -101,20 +96,17 @@
         width: 95%;
     }
     
-
+    .presentationCard-paragraph h1 {
+        font-size: 60px;
+    }
     .presentationCard-paragraph p{
-
-        text-align: justify;
-        font-style: italic;
-        letter-spacing: 0.03em;
-        line-height: 1.5em;
         font-size: 16px;
         
     }
 
     .wrapper {
-        height: 260px;
-        width: 260px; 
+        height: 380px;
+        width: 380px;  
         overflow: hidden;
     }
     
@@ -132,9 +124,65 @@
         /* JUSTIFY CONTENT IS FOR PLACING THE PRESENTATION CARD IN THE MIDDLE*/
         justify-content: center; /* COLUMN ALIGNMENT*/
         align-items: center; /* ROW ALIGNMENT*/
-        box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.25);
         width: 90%;
         padding: 24px 12px;
+        height: fit-content;
+    }
+
+    .presentationCard-paragraph{
+        width: fit-content;
+        display: flex;
+        row-gap: 24px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    
+    .presentationCard-paragraph p{
+
+        text-align: center;
+        font-style: normal;
+        letter-spacing: 0.03em;
+        line-height: 1.5em;
+        font-size: 32px;
+        
+    }
+
+    .presentationCard-paragraph h1{
+        font-size: 48px;
+        
+    }
+
+    .wrapper {
+        height: 400px;
+        width: 400px; 
+        overflow: hidden;
+        order: -1;
+
+    }
+
+    .presentationCard-paragraph a {
+       font-size: 32px;
+       width: 80%;
+    }
+    
+
+}
+
+/* MIN WIDTH 768 px*/
+@media (max-width:768px) {
+    .presentationCard {
+        display: flex;
+        flex-direction: column;
+        column-gap: 24px;
+        row-gap: 24px;
+        /* JUSTIFY CONTENT IS FOR PLACING THE PRESENTATION CARD IN THE MIDDLE*/
+        justify-content: center; /* COLUMN ALIGNMENT*/
+        align-items: center; /* ROW ALIGNMENT*/
+        width: 90%;
+        padding: 24px 12px;
+        height: fit-content;
     }
 
     .presentationCard-paragraph{
@@ -150,10 +198,10 @@
     .presentationCard-paragraph p{
 
         text-align: center;
-        font-style: italic;
+        font-style: normal;
         letter-spacing: 0.03em;
         line-height: 1.5em;
-        font-size: 24px;
+        font-size: 32px;
         
     }
 
@@ -176,48 +224,6 @@
 
 }
 
-/* MIN WIDTH 768 px*/
-@media (max-width:768px) {
-    .presentationCard {
-        display: flex;
-        flex-direction: column;
-        column-gap: 24px;
-        row-gap: 24px;
-        /* JUSTIFY CONTENT IS FOR PLACING THE PRESENTATION CARD IN THE MIDDLE*/
-        justify-content: center; /* COLUMN ALIGNMENT*/
-        align-items: center; /* ROW ALIGNMENT*/
-        box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.25);
-        width: 90%;
-        padding: 24px 12px;
-
-    }
-    
-    .presentationCard-paragraph p{
-
-        text-align: center;
-        font-style: italic;
-        letter-spacing: 0.03em;
-        line-height: 1.5em;
-        font-size: 38px;
-        width: calc(95% - 18px);
-        
-    }
-
-    .presentationCard-paragraph h1{
-        font-size: 72px;
-   
-        
-    }
-
-    .wrapper {
-        height: 400px;
-        width: 400px; 
-        overflow: hidden;
-    }
-    
-
-}
-
 /* MIN WIDTH 680 px*/
 @media (max-width:680px) {
     .presentationCard {
@@ -228,33 +234,45 @@
         /* JUSTIFY CONTENT IS FOR PLACING THE PRESENTATION CARD IN THE MIDDLE*/
         justify-content: center; /* COLUMN ALIGNMENT*/
         align-items: center; /* ROW ALIGNMENT*/
-        box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.25);
         width: 90%;
         padding: 24px 12px;
+        height: fit-content;
+    }
+
+    .presentationCard-paragraph{
+        max-width: 75%;
+        display: flex;
+        row-gap: 24px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
     }
     
     .presentationCard-paragraph p{
-  
+
         text-align: center;
-        font-style: italic;
+        font-style: normal;
         letter-spacing: 0.03em;
         line-height: 1.5em;
-        font-size: 38px;
-        width: calc(95% - 18px);
-        
+        font-size: 40px;        
     }
 
     .presentationCard-paragraph h1{
         font-size: 48px;
-   
+        text-align: center;
         
     }
 
     .wrapper {
-        height: 280px;
-        width: 280px; 
+        height: 400px;
+        width: 400px; 
         overflow: hidden;
+    }
+
+    .presentationCard-paragraph a {
+       font-size: 32px;
+       width: 80%;
     }
 
 }
@@ -269,7 +287,6 @@
         /* JUSTIFY CONTENT IS FOR PLACING THE PRESENTATION CARD IN THE MIDDLE*/
         justify-content: center; /* COLUMN ALIGNMENT*/
         align-items: center; /* ROW ALIGNMENT*/
-        box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.25);
         width: 90%;
         padding: 24px 12px;
 
@@ -278,11 +295,11 @@
     .presentationCard-paragraph p{
 
         text-align: center;
-        font-style: italic;
+        font-style: normal;
         letter-spacing: 0.03em;
         line-height: 1.5em;
         font-size: 38px;
-        width: calc(95% - 18px);
+        width: 100%
         
     }
 
@@ -310,7 +327,6 @@
         /* JUSTIFY CONTENT IS FOR PLACING THE PRESENTATION CARD IN THE MIDDLE*/
         justify-content: center; /* COLUMN ALIGNMENT*/
         align-items: center; /* ROW ALIGNMENT*/
-        box-shadow: 0px 0px 6px 3px rgba(0,0,0,0.25);
         width: 90%;
         padding: 24px 12px;
 

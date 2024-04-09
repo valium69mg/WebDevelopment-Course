@@ -24,7 +24,7 @@ const AnimatedHome = () => {
         >
             <PresentationCard/>
 
-            <Logos/>
+            
             
         </motion.div>
     );
