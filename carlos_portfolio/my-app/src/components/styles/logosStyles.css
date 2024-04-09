@@ -5,8 +5,8 @@
 .logos {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-content: center;
     align-items: center;
+    justify-items: center;
     column-gap: 48px;
     width: fit-content;
     border-radius: 12px;
